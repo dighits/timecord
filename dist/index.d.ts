@@ -1,4 +1,4 @@
-import { TimestampResolvable, TimestampStyle, TimeUnitResolvable, StyleResolvable } from './types';
+import { TimestampResolvable, TimestampStyle, TimeUnits, TimeUnitResolvable, StyleType, StyleResolvable } from './types';
 /**
  *  This is a {@link DiscordTimestamp}, a utility to convert a timestamp to a Discord Unix Timestamp.
  *
@@ -34,10 +34,10 @@ export declare class DiscordTimestamp {
      */
     protected readonly initialTimestamp: number;
     /**
-     * Constructor of the {@link DiscordTimestamp} class
+     * Constructor of the {@link DiscordTimestamp} class.
      *
      * @param  {TimestampResolvable} timestamp? The {@link TimestampResolvable} to resolve, could be a number, date or string of numbers.
-     * @param  {TimestampStyle} style? The {@link TimestampStyle} for this instance of the {@link DiscordTimestamp} class.
+     * @param  {StyleResolvable} style? The {@link StyleResolvable} for this instance of the {@link DiscordTimestamp} class.
      */
     constructor(timestamp?: TimestampResolvable, style?: StyleResolvable);
     /**
@@ -65,14 +65,15 @@ export declare class DiscordTimestamp {
     /**
      * Sets the {@link DiscordTimestamp.timestamp} for this instance of {@link DiscordTimestamp}.
      *
-     * @param  {TimestampResolvable} timestamp The {@link TimestampResolvable} to resolve, could be a number, date or string of numbers.
+     * @param {TimestampResolvable} timestamp The {@link TimestampResolvable} to resolve, could be a number, date or string of numbers.
+     * @param {StyleResolvable} style? The new {@link StyleResolvable} value.
      * @returns The current instance of {@link DiscordTimestamp}
      */
     setTimestamp(timestamp: TimestampResolvable, style?: StyleResolvable): this;
     /**
      * Sets the {@link DiscordTimestamp.style} for this instance of {@link DiscordTimestamp}.
      *
-     * @param {TimestampStyle} style The new {@link TimestampStyle} value.
+     * @param {StyleResolvable} style The new {@link StyleResolvable} value.
      * @returns The current instance of {@link DiscordTimestamp}
      */
     setStyle(style: StyleResolvable): this;
@@ -80,15 +81,16 @@ export declare class DiscordTimestamp {
      * Format a {@link TimestampResolvable} or the {@link DiscordTimestamp.timestamp} value to a {@link TimestampResult}.
      *
      * @param  {TimestampResolvable} timestamp? The {@link TimestampResolvable} to resolve, could be a number, date or string of numbers.
-     * @param  {TimestampStyle} style? The {@link TimestampStyle} for this {@link TimestampResolvable}.
+     * @param  {StyleResolvable} style? The {@link StyleResolvable} for this {@link TimestampResolvable}.
      * @returns An Discord Unix Timestamp, for more information, visit {@linkplain https://discord.com/developers/docs/reference#message-formatting-timestamp-styles Message Formatting Timestamp Styles}
      */
-    format(timestamp?: TimestampResolvable, style?: StyleResolvable): `<t:${number}:${string}>`;
+    format(style?: StyleResolvable): `<t:${number}:${string}>`;
     private parseTimestamp;
     private resolveStyle;
     private resolveTimestamp;
     private resolveTime;
     private convertToDiscordTimestamp;
 }
+export { StyleType, TimeUnits };
 export default DiscordTimestamp;
 //# sourceMappingURL=index.d.ts.map

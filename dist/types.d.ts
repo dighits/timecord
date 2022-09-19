@@ -1,7 +1,7 @@
-export declare type TimestampResolvable = number | Date | string;
+export declare type TimestampResolvable = Date | number | string;
 export declare type TimestampStyle = 't' | 'T' | 'd' | 'D' | 'f' | 'F' | 'R';
-export declare type StyleResolvable = keyof typeof StyleType | StyleType;
 export declare type TimestampResult = `<t:${number}:${StyleType[number]}>`;
+export declare type StyleResolvable = StyleType | keyof typeof StyleType;
 export declare type TimeUnitResolvable = TimeUnits | keyof typeof TimeUnits;
 export declare enum TimeUnits {
     Miliseconds = 1,

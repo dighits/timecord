@@ -21,6 +21,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   DiscordTimestamp: () => DiscordTimestamp,
+  StyleType: () => StyleType,
+  TimeUnits: () => TimeUnits,
   default: () => src_default
 });
 module.exports = __toCommonJS(src_exports);
@@ -77,9 +79,8 @@ var DiscordTimestamp = class {
     this.style = this.resolveStyle(style);
     return this;
   }
-  format(timestamp, style) {
-    timestamp = Math.floor((timestamp ? this.parseTimestamp(timestamp) : this.timestamp) / 1e3);
-    return this.convertToDiscordTimestamp(timestamp, style ? this.resolveStyle(style) : this.style);
+  format(style) {
+    return this.convertToDiscordTimestamp(this.timestamp, style ? this.resolveStyle(style) : this.style);
   }
   parseTimestamp(timestamp) {
     const resolved = this.resolveTimestamp(timestamp);
@@ -90,7 +91,6 @@ var DiscordTimestamp = class {
     return resolved;
   }
   resolveStyle(style) {
-    console.log(style, typeof style);
     return StyleType[style] ?? style;
   }
   resolveTimestamp(timestamp) {
@@ -107,5 +107,7 @@ var DiscordTimestamp = class {
 var src_default = DiscordTimestamp;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  DiscordTimestamp
+  DiscordTimestamp,
+  StyleType,
+  TimeUnits
 });
