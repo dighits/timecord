@@ -1,0 +1,38 @@
+{
+	"name": "timecord",
+	"version": "1.0.0",
+	"description": "Tool to easily create and manipulate discord timestamps.",
+	"main": "dist/index.js",
+	"author": "notbojji",
+	"license": "MIT",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	},
+	"scripts": {
+		"build": "tsup src && tsc -b src",
+		"start": "yarn build && node .",
+		"test": "yarn build && node dist/testing.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/notbojji/timecord.git"
+	},
+	"files": [
+		"dist/**/*.js*",
+		"dist/**/*.mjs*",
+		"dist/**/*.d*"
+	],
+	"devDependencies": {
+		"@sapphire/ts-config": "^3.3.4",
+		"tsup": "^6.2.3",
+		"typescript": "4.8.2"
+	},
+	"engines": {
+		"node": ">=v14.0.0",
+		"npm": ">=7.0.0"
+	}
+}
