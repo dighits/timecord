@@ -55,24 +55,24 @@ console.log(`You will be able to use this command again ${timestamp.addTime(2, T
 
 ## Methods
 
-| Method         | Parameters                                                        | Description                                 |
-| -------------- | ----------------------------------------------------------------- | ------------------------------------------- |
-| addTime        | `amount`: number<br>`time`**?**: TimeUnitResolvable               | Adds time to the timestamp.                 |
-| subtractTime   | `amount`: number<br>`time`**?**: TimeUnitResolvable               | Subtracts time to the timestamp.            |
-| resetTimestamp | none                                                              | Resets the timestamp.                       |
-| setTimestamp   | `timestamp`: TimestampResolvable<br>`style`**?**: StyleResolvable | Sets the timestamp.                         |
-| setStyle       | `style`: StyleResolvable                                          | Sets the style.                             |
-| format         | `style`**?**: StyleResolvable                                     | Formats the timestamp to a TimestampResult. |
+| Method         | Parameters                                                                                                      | Description                                                                               |
+| -------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| addTime        | `amount`: number<br>`time`**?**: [TimeUnitResolvable](https://github.com/notbojji/timecord#types)               | Adds time to the timestamp.                                                               |
+| subtractTime   | `amount`: number<br>`time`**?**: [TimeUnitResolvable](https://github.com/notbojji/timecord#types)               | Subtracts time to the timestamp.                                                          |
+| resetTimestamp | none                                                                                                            | Resets the timestamp.                                                                     |
+| setTimestamp   | `timestamp`: [TimestampResolvable](https://github.com/notbojji/timecord#types)<br>`style`**?**: StyleResolvable | Sets the timestamp.                                                                       |
+| setStyle       | `style`: [StyleResolvable](https://github.com/notbojji/timecord#types)                                          | Sets the style.                                                                           |
+| format         | `style`**?**: [StyleResolvable](https://github.com/notbojji/timecord#types)                                     | Formats the timestamp to a [TimestampResult](https://github.com/notbojji/timecord#types). |
 
 ## Types
 
-| Name                | Type                                         |
-| ------------------- | -------------------------------------------- | ------------------------- | --------- | --- | --- | --- | ------ |
-| TimestampResolvable | ```Date                                      | number                    | string``` |
-| TimestampStyle      | ```"t"                                       | "T"                       | "d"       | "D" | "f" | "F" | "R"``` |
-| TimestampResult     | `` `<t:\${number}:\${StyleType[number]}>` `` |
-| StyleResolvable     | ```StyleType                                 | keyof typeof StyleType``` |
-| TimeUnitResolvable  | ```TimeUnits                                 | keyof typeof TimeUnits``` |
+| Name                | Type                                                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| TimestampResolvable | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| number \| string               |
+| TimestampStyle      | "t" \| "T" \| "d" \| "D" \| "f" \| "F" \| "R"                                                                                   |
+| TimestampResult     | \`<t:\${number}:\${[StyleType](https://github.com/notbojji/timecord#enums)[number]}>\`                                          |
+| StyleResolvable     | [StyleType](https://github.com/notbojji/timecord#enums) \| keyof typeof [StyleType](https://github.com/notbojji/timecord#enums) |
+| TimeUnitResolvable  | [TimeUnits](https://github.com/notbojji/timecord#enums) \| keyof typeof [TimeUnits](https://github.com/notbojji/timecord#enums) |
 
 ## Enums
 
