@@ -147,7 +147,7 @@ export class DiscordTimestamp {
 	}
 
 	private convertToDiscordTimestamp(timestamp: number, style: TimestampStyle): TimestampResult {
-		return `<t:${timestamp}:${style}>`;
+		return `<t:${Math.floor(timestamp / 1000)}:${style}>`;
 	}
 }
 

@@ -84,7 +84,7 @@ export declare class DiscordTimestamp {
      * @param  {StyleResolvable} style? The {@link StyleResolvable} for this {@link TimestampResolvable}.
      * @returns An Discord Unix Timestamp, for more information, visit {@linkplain https://discord.com/developers/docs/reference#message-formatting-timestamp-styles Message Formatting Timestamp Styles}
      */
-    format(style?: StyleResolvable): `<t:${number}:${string}>`;
+    format(style?: StyleResolvable): `<t:${number}:t>` | `<t:${number}:T>` | `<t:${number}:d>` | `<t:${number}:D>` | `<t:${number}:f>` | `<t:${number}:F>` | `<t:${number}:R>`;
     private parseTimestamp;
     private resolveStyle;
     private resolveTimestamp;

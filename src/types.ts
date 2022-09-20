@@ -1,6 +1,6 @@
 export type TimestampResolvable = Date | number | string;
 export type TimestampStyle = 't' | 'T' | 'd' | 'D' | 'f' | 'F' | 'R';
-export type TimestampResult = `<t:${number}:${StyleType[number]}>`;
+export type TimestampResult = `<t:${number}:${TimestampStyle}>`;
 export type StyleResolvable = StyleType | keyof typeof StyleType;
 export type TimeUnitResolvable = TimeUnits | keyof typeof TimeUnits;
 
@@ -8,8 +8,8 @@ export enum TimeUnits {
 	Miliseconds = 1,
 	Seconds = 1000,
 	Minutes = 60000,
-	Hours = 3.6e6,
-	Days = 8.64e7,
+	Hours = 3600000,
+	Days = 86400000,
 }
 
 export enum StyleType {
