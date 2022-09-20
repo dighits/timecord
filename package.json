@@ -1,6 +1,6 @@
 {
 	"name": "timecord",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Tool to easily create and manipulate discord timestamps.",
 	"main": "dist/index.js",
 	"author": "imluwi",
